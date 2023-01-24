@@ -22,8 +22,12 @@ public class Calculadora{
                 resultado = operaciones.restar(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
             } else if (operacion.equalsIgnoreCase("*")){
+            	try {
                 resultado = operaciones.multiplicar(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
+            	}catch(ArithmeticException exception) {
+            		System.out.println("Error"+ exception.getMessage());
+            	}
             } else if (operacion.equalsIgnoreCase("/")){
                 resultado = operaciones.dividir(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
@@ -31,7 +35,7 @@ public class Calculadora{
                 resultado = operaciones.resto(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
             } else {
-                System.out.println ("Operación no válida");
+                System.out.println ("Operaciï¿½n no vï¿½lida");
             }
         }   while (menu.repetir());
     }
